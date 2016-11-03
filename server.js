@@ -11,18 +11,16 @@ var PORT = process.env.PORT || 4040;
  //Routes for local host
 
 // Bodyparse application/x-www-form-urlencoded 
-/*app.use(bodyParser.json());
-app.use(bodyParser.text())*/
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(bodyParser.text())
+app.use(bodyParser.json({type:'application/vnd.api+json'}));
  
-// parse application/json 
-app.use(bodyParser.json())
 //pulling data to display inside html pages///////
 require('./app/routing/api-routes.js')(app);
 require('./app/routing/html-routes.js')(app);
 
-//Added console log for confirmation purposes//
+//Added console log for confirmation purposes that the server started succesfully.//
 app.listen(PORT, function(){
 	console.log("App Listening on PORT: " + PORT);
 });

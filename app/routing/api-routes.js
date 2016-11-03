@@ -6,11 +6,11 @@ module.exports = function(app) {
 		res.json(surveyData);
 	});
 
-	/*app.post('/api/friends', function (req, res) {
-		var newUser = req.body;
-		newUser.route
+	app.post('/api/friends', function (req, res) {
+		surveyData.push(req.body);
+		res.json(true);
 
 
-	});*/
+	});
 
 }
