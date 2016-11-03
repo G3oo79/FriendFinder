@@ -3,7 +3,7 @@ var surveyData = require('../data/friends.js');
 module.exports = function(app) {
 
 	app.get('/api/friends', function (req, res) {
-		res.json(surveyArray);
+		res.json(surveyData);
 	});
 
 	/*app.post('/api/friends', function (req, res) {

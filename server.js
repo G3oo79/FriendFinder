@@ -10,8 +10,11 @@ var app = express();
 var PORT = process.env.PORT || 4040;
  //Routes for local host
 
-// parse application/x-www-form-urlencoded 
-app.use(bodyParser.urlencoded({ extended: false }))
+// Bodyparse application/x-www-form-urlencoded 
+/*app.use(bodyParser.json());
+app.use(bodyParser.text())*/
+app.use(bodyParser.urlencoded({ extended: false }));
+
  
 // parse application/json 
 app.use(bodyParser.json())
