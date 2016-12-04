@@ -12,7 +12,7 @@ var PORT = process.env.PORT || 4040;
 
 // Bodyparse application/x-www-form-urlencoded 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.text())
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
  

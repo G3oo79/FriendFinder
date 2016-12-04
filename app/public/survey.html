@@ -16,9 +16,21 @@
 	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
           
 </head>
-<body>
 
+	<style>
+		#friendpic{width: 60%;}
+	</style>
+
+<body>
 	<div class="container">
+		<div class="row">
+			<h4 class="friendName"></h4>
+			<div class="col-lg-12">
+				<img id="friendpic" src="" alt="">
+			</div>
+
+		</div>
+	
 		<h2>Survey Questions</h2>
 		<hr>
 		<h3>About You</h3>
@@ -229,45 +241,42 @@
 
 			$('select').material_select();
 
+			/*$('#modal1').modal('open');*/
+
 		$('#submit').on('click', function(){
 			var newUser = {
 				name : $('#name').val().trim(),
 				photo : $('#photo').val().trim(),
 				scores : [
-					$('#q0').val(),
-					$('#q1').val(),
-					$('#q2').val(),
-					$('#q3').val(),
-					$('#q4').val(),
-					$('#q5').val(),
-					$('#q6').val(),
-					$('#q7').val(),
-					$('#q8').val(),
-					$('#q9').val()
+					parseInt($('#q0').val()),
+					parseInt($('#q1').val()),
+					parseInt($('#q2').val()),
+					parseInt($('#q3').val()),
+					parseInt($('#q4').val()),
+					parseInt($('#q5').val()),
+					parseInt($('#q6').val()),
+					parseInt($('#q7').val()),
+					parseInt($('#q8').val()),
+					parseInt($('#q9').val())
 
 				]
+
 			}
 
 			var currentUrl = window.location.origin;
 
 			$.post(currentUrl + '/api/friends', newUser, function(data) {
-				if (data == true) {
-					alert("Well Done You are in!!")
-					console.log(newUser);
-					console.log(data);
-				}
+				$(".friendName").text(data.name);
+				$("#friendpic").attr('src', data.photo);
+				alert("congrats your match" + "#friendpic");
+
+			});
+				
 			});
 
 		});
-
-
-
-		/*function runFriendQuery () {
-
-			$.ajax({url})
-		}*/
         
-		});
+		
 	</script>
 </body>
 </html>
