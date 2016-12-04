@@ -2,7 +2,7 @@ var surveyArray = [
 
   {
      "name":"Lou Ritter",
-     "photo":"https://m.facebook.com/photo.php?fbid=10208500699025296&id=1542229019&set=a.1549418665704.77596.1542229019&source=11",
+     "photo":"https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/pia20645_main.jpg?itok=dLn7SngD",
      "scores":[
         "4",
         "3",
